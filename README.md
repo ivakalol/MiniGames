@@ -4,7 +4,7 @@ A collection of fast-paced, browser-based mini-games that challenge your reflexe
 
 ## 🚀 Live Demo
 
-[Play the games here!](https://ivakalol.github.io/MiniGames/) *(Update this link with your actual deployment URL)*
+[Play the games here!](https://ivakalol.github.io/MiniGames/) 
 
 ## 🎯 Games Included
 
