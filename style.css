@@ -1,0 +1,219 @@
+/* General body styling */
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+    color: #fff;
+    overflow: hidden; /* Prevent scrolling */
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box;
+}
+
+/* Main game container */
+.game-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 600px; /* Max width for larger screens */
+    width: 100%; /* Full width on smaller screens */
+    box-sizing: border-box;
+    border: 2px solid #a8dadc; /* Border for the container */
+    position: relative;
+    z-index: 1;
+}
+
+/* Game title */
+h1 {
+    color: #f1faee;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Game instructions and messages */
+#game-instructions, #game-message {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #a8dadc;
+    min-height: 24px; /* Ensure consistent height */
+}
+
+/* Game timer */
+#game-timer {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Canvas styling */
+canvas {
+    background-color: #f1faee; /* Light background for canvas */
+    border-radius: 10px;
+    border: 2px solid #457b9d;
+    display: block; /* Remove extra space below canvas */
+    margin: 0 auto 20px auto; /* Center canvas and add bottom margin */
+    width: 100%; /* Make canvas responsive */
+    max-width: 500px; /* Max width for canvas */
+    height: 300px; /* Fixed height for canvas, can be adjusted */
+    cursor: pointer; /* Indicate interactivity */
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(45deg, #e63946 0%, #f4a261 100%); /* Gradient button */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    outline: none; /* Remove outline on focus */
+    margin: 5px; /* Add margin for multiple buttons */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(230, 57, 70, 0.3);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Modal for messages (win/lose) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #457b9d;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more responsive */
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #f1faee;
+    font-size: 2em;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    background: #f4a261;
+    box-shadow: 0 5px 15px rgba(244, 162, 97, 0.4);
+}
+
+.modal-buttons button:hover {
+    background: #e63946;
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.6);
+}
+
+/* Game selection dropdown */
+#game-selector {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #457b9d;
+    background-color: #f1faee;
+    color: #2d3a4b;
+    font-size: 1.1em;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Buttons container for Start/Pause */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    #game-instructions, #game-message {
+        font-size: 1em;
+    }
+    #game-timer {
+        font-size: 1.5em;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .game-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    canvas {
+        height: 250px; /* Adjust canvas height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    .game-container {
+        padding: 15px;
+    }
+    canvas {
+        height: 200px; /* Further adjust canvas height */
+    }
+    .modal-buttons, .game-controls {
+        flex-direction: column; /* Stack buttons on small screens */
+    }
+}
